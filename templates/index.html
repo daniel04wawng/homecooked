@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Calendar</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<script>
+	function showSection(sectionIdToShow, sectionIdToHide) {
+				document.getElementById(sectionIdToShow).style.display = "block";
+				document.getElementById(sectionIdToHide).style.display = "none";
+			}
+	function handleMacroNeedsTemplate() {
+		const useTemplateInput = document.getElementById("use_template");
+		const macroNeedsSection = document.getElementById("macro_needs_section");
+		const macroNeedsQuestionSection = document.getElementById("macro-needs-question-section");
+		const mealDistributionWeightsSection = document.getElementById("meal-distribution-weights-section");
+
+		if (useTemplateInput.value.toLowerCase() === "yes") {
+			// Populate macro needs input fields with template values
+			populateMacroNeedsTemplate();
+		}
+
+		// Hide the macro needs question section
+		macroNeedsQuestionSection.style.display = "none";
+
+		// Show the macro needs section
+		macroNeedsSection.style.display = "block";
+	}
+
+	function populateMacroNeedsTemplate() {
+		// Populate macro needs input fields with template values
+		document.getElementsByName("caloric_needs")[0].value = 2425;
+		document.getElementsByName("protein_needs")[0].value = 148;
+		document.getElementsByName("carbs_needs")[0].value = 323;
+		document.getElementsByName("Sugar_needs")[0].value = 65;
+		document.getElementsByName("fat_needs")[0].value = 69;
+		document.getElementsByName("saturated_fat_needs")[0].value = 28;
+	}
+
+	function showMealDistributionWeightsSection() {
+		const mealDistributionWeightsSection = document.getElementById("meal-distribution-weights-section");
+		const macroNeedsSection = document.getElementById("macro_needs_section");
+
+		// Hide the macro needs section
+		macroNeedsSection.style.display = "none";
+
+		// Show the meal distribution weights section
+		mealDistributionWeightsSection.style.display = "block";
+	}
+    function populateMacroNeedsTemplate() {
+        // Populate macro needs input fields with template values
+        document.getElementsByName("caloric_needs")[0].value = 2425;
+        document.getElementsByName("protein_needs")[0].value = 148;
+        document.getElementsByName("carbs_needs")[0].value = 323;
+        document.getElementsByName("Sugar_needs")[0].value = 65;
+        document.getElementsByName("fat_needs")[0].value = 69;
+        document.getElementsByName("saturated_fat_needs")[0].value = 28;
+    }
+    </script>
+<style>
+	body,h1, h2{font-family: "Valera Round", sans-serif}
+	body, html {height: 100%}
+	.bgimg {
+		background: linear-gradient(to bottom, #09203F, #537895);
+		min-height: 120%;
+	}
+</style>
+ <title>Styling Buttons</title>
+    <style>
+		button {
+				display: inline-block;
+				background-color: rgba(0, 0, 0, 0.05);
+				border-radius: 10px;
+				border: 1px solid white;
+				color: #ffffff;
+				text-align: center;
+				font-size: 26px;
+				padding: 10px;
+				width: 200px;
+				transition: all 0.5s;
+				cursor: pointer;
+				margin: 5px;
+				box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6)
+			}
+			button span {
+				cursor: pointer;
+				display: inline-block;
+				position: relative;
+				transition: 0.5s;
+			}
+			button span:after {
+				content: "\00bb"; /* HTML code of » sign */
+				position: absolute; /* its parent (button) is relative */
+				opacity: 0;
+				top: 0;
+				right: -20px;
+				transition: 0.5s;
+			}
+			button:hover {
+			background-color: rgba(255, 255, 255, 0.50);
+			}
+			button:hover span {
+			padding-right: 25px;
+			}
+			button:hover span:after {
+			opacity: 1;
+			right: 0;
+			}
+			#dietary-restrictions-section button {
+				margin-top: 20px; /* Increase the top margin of the button */
+			}
+			#allergies-section button {
+				margin-top: 20px; /* Increase the top margin of the button */
+			}
+			#food-exclusion-section button {
+				margin-top: 20px; /* Increase the top margin of the button */
+			}
+			#macro-needs-question-section button {
+				margin-top: 20px; /* Increase the top margin of the button */
+			}
+			
+			#date-section button {
+				margin-top: 20px; /* Increase the top margin of the button */
+			}
+        /* Style for the label text */
+		
+    .w3-text-white {
+        color: white;
+    }
+
+    /* Style for the checkbox container */
+    .w3-check-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    /* Style for the checkboxes */
+    .custom-checkbox input[type="checkbox"] {
+        display: none;
+    }
+	
+	.custom-checkbox label {
+        display: inline-flex;
+        align-items: center; /* Vertical center alignment */
+    }
+
+    .custom-checkbox span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid white;
+        background-color: transparent;
+        margin-right: 15px;
+        vertical-align: middle;
+        position: relative;
+		box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6)
+		
+    }
+
+    .custom-checkbox input[type="checkbox"]:checked + span::after {
+        content: '\2713'; /* Unicode checkmark character */
+        font-size: 16px;
+        position: absolute;
+        top: -4px;
+        left: 4px;
+        color: white;
+    }
+	
+	.w3-check input[type="checkbox"]:checked + .custom-checkbox::after {
+        opacity: 1;
+    }
+	
+	input {
+		color: white;
+		background-color: rgba(0, 0, 0, 0.05);
+		border-radius: 10px;
+		border: 1px solid white;
+		box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6)
+		padding: 10px;
+	}
+	</style>	
+</head>
+<body>
+    <div class="bgimg w3-animate-opacity w3-text-white" id="welcome-section">
+		<div class="w3-display-middle w3-container" id="get-started-section" style="display: block; text-align: center;">
+			<h1 class="w3-jumbo w3-animate-top">Welcome to Homecooked</h1>
+			<button class=" w3-animate-bottom" onclick="showSection('calendar-id-section','get-started-section')">Continue</button>
+		</div>
+		<form action="/create_recipe" method="post">
+		<div class="w3-display-middle " id="calendar-id-section" style="display: none; text-align: center">
+			<h2 class="w3-text-white w3-animate-top">Input your Calendar ID</h2>
+			<input class="w3-text-white w3-animate-top" type="text" name="calendar_id" id="calendar_id" required><br>
+			<button class="w3-animate-bottom" onclick="showSection('dietary-restrictions-section', 'calendar-id-section')">Continue</button>
+		</div>
+		<div class="w3-display-middle w3-container" id="dietary-restrictions-section" style="display: none; text-align: center;">
+			<h2 class="w3-animate-top"> Input any Dietary Restrictions</h2>
+			<div class="w3-row-padding w3-animate-top">
+				<div class="w3-check-container">
+					<label class="custom-checkbox w3-check">
+						<input type="checkbox" name="dietary_restrictions" value="vegetarian">
+						<span class="custom-checkbox"></span>
+					</label>
+					<span class="w3-text-white">Vegetarian</span>
+				</div>
+				<div class="w3-check-container">
+					<label class="custom-checkbox w3-check">
+						<input type="checkbox" name="dietary_restrictions" value="vegan">
+						<span class="custom-checkbox"></span>
+					</label>
+					<span class="w3-text-white">Vegan</span>
+				</div>
+				<div class="w3-check-container">
+					<label class="custom-checkbox w3-check">
+						<input type="checkbox" name="dietary_restrictions" value="gluten-free">
+						<span class="custom-checkbox"></span>
+					</label>
+					<span class="w3-text-white">Gluten-Free</span>
+				</div>
+				<div class="w3-check-container">
+					<label class="custom-checkbox w3-check">
+						<input type="checkbox" name="dietary_restrictions" value="dairy-free">
+						<span class="custom-checkbox"></span>
+					</label>
+					<span class="w3-text-white">Dairy-Free</span>
+				</div>
+			</div>
+			<button class="w3-animate-bottom" onclick="showSection('allergies-section', 'dietary-restrictions-section')">Continue</button>
+		</div>
+		<div class="w3-display-middle " id="allergies-section" style="display: none; text-align: center;">
+			<h2 class="w3-animate-top">Input any Allergies</h2>
+			<div class="w3-row-padding w3-animate-top">
+				<div class="w3-check-container">
+					<label class="custom-checkbox w3-check">
+						<input type="checkbox" name="allergies" value="nuts">
+						<span class="custom-checkbox"></span>
+					</label>
+					<span class="w3-text-white">Nuts</span>
+				</div>
+				<div class="w3-check-container">
+					<label class="custom-checkbox w3-check">
+						<input type="checkbox" name="allergies" value="shellfish">
+						<span class="custom-checkbox"></span>
+					</label>
+					<span class="w3-text-white">Shellfish</span>
+				</div>
+				<div class="w3-check-container">
+					<label class="custom-checkbox w3-check">
+						<input type="checkbox" name="allergies" value="soy">
+						<span class="custom-checkbox"></span>
+					</label>
+					<span class="w3-text-white">Soy</span>
+				</div>
+				<div class="w3-check-container">
+					<label class="custom-checkbox w3-check">
+						<input type="checkbox" name="allergies" value="wheat">
+						<span class="custom-checkbox"></span>
+					</label>
+					<span class="w3-text-white">Wheat</span>
+				</div>
+			</div>
+			<button class="w3-animate-bottom" onclick="showSection('food-exclusion-section', 'allergies-section')">Continue</button>
+		</div>
+		<div class="w3-display-middle " id="food-exclusion-section" style="display: none; text-align: center;">
+			<h2 class="w3-animate-top">Food Exclusions</h2>
+			<input class="w3-input w3-animate-bottom" type="text" name="food_restrictions" placeholder="Enter excluded foods, separated by commas">
+			<button class="w3-animate-bottom" onclick="showSection('macro-needs-question-section', 'food-exclusion-section')">Continue</button>
+		</div>
+		<div class="w3-display-middle " id="macro-needs-question-section" style="display: none; text-align: center;">
+			<h2 class="w3-text-white w3-animate-top" for="use_template">Do you want to use a premade template for daily macronutrient needs? (yes/no):</h2>
+			<input class="w3-input w3-animate-bottom" type="text" name="use_template" id="use_template" required>
+			<button class="w3-animate-bottom" onclick="handleMacroNeedsTemplate()">Continue</button>
+		</div>
+		<div class="w3-display-middle " id="macro_needs_section" style="display: none; text-align: center">
+			<label class="w3-text-white w3-animate-top" for="caloric_needs">Caloric Needs:</label>
+			<input class="w3-input w3-animate-top" type="number" name="caloric_needs" value="" required><br>
+			<label class="w3-text-white w3-animate-top" for="protein_needs">Protein Needs:</label>
+			<input class="w3-input w3-animate-top" type="number" name="protein_needs" value="" required><br>
+			<label class="w3-text-white w3-animate-top" for="carbs_needs">Carbohydrate Needs:</label>
+			<input class="w3-input w3-animate-top" type="number" name="carbs_needs" value="" required><br>
+			<label class="w3-text-white w3-animate-top" for="Sugar_needs">Sugar Needs:</label>
+			<input class="w3-input w3-animate-top" type="number" name="Sugar_needs" value="" required><br>
+			<label class="w3-text-white w3-animate-top" for="fat_needs">Fat Needs:</label>
+			<input class="w3-input w3-animate-top" type="number" name="fat_needs" value="" required><br>
+			<label class="w3-text-white w3-animate-top" for="saturated_fat_needs">Saturated Fat Needs:</label>
+			<input class="w3-input w3-animate-top" type="number" name="saturated_fat_needs" value="" required><br>
+			<button class="w3-animate-bottom" onclick="showMealDistributionWeightsSection()">Continue</button>
+		</div>
+		<div class="w3-display-middle " id="meal-distribution-weights-section" style="display: none; text-align: center">
+			<h2 class="w3-text-white w3-animate-top">Meal Distribution Weights</h2>
+			<label class="w3-text-white w3-animate-top" for="breakfast_weight">Breakfast Weight (0-1):</label>
+			<input class="w3-input w3-animate-top" type="number" name="breakfast_weight" step="0.01" min="0" max="1" required><br>
+			<label class="w3-text-white w3-animate-top" for="lunch_weight">Lunch Weight (0-1):</label>
+			<input class="w3-input w3-animate-top" type="number" name="lunch_weight" step="0.01" min="0" max="1" required><br>
+			<label class="w3-text-white w3-animate-top" for="dinner_weight">Dinner Weight (0-1):</label>
+			<input class="w3-input w3-animate-top" type="number" name="dinner_weight" step="0.01" min="0" max="1" required><br>
+			<button class="w3-animate-bottom" onclick="showSection('create_recipe-section', 'meal-distribution-weights-section')">Continue</button>
+		</div>
+		<div class="w3-display-middle " id="create_recipe-section" action="/create_recipe" method="post" style="display: none; ext-align: center">
+				<h2 class="w3-text-white w3-animate-top">Breakfast</h2>
+				<label class="w3-text-white w3-animate-top" for="breakfast_ingredient_list">Ingredient List:</label>
+				<input class="w3-input w3-animate-top" type="text" name="breakfast_ingredient_list" id="breakfast_ingredient_list" required><br>
+				<label class="w3-text-white w3-animate-top" for="breakfast_time_input">Time (HH:MM):</label>
+				<input class="w3-input w3-animate-top" type="text" name="breakfast_time_input" id="breakfast_time_input" required><br>
+
+				<h2 class="w3-text-white w3-animate-top">Lunch</h2>
+				<label class="w3-text-white w3-animate-top" for="lunch_ingredient_list">Ingredient List:</label>
+				<input class="w3-input w3-animate-top"type="text" name="lunch_ingredient_list" id="lunch_ingredient_list" required><br>
+				<label class="w3-text-white w3-animate-top" for="lunch_time_input">Time (HH:MM):</label>
+				<input class="w3-input w3-animate-top" type="text" name="lunch_time_input" id="lunch_time_input" required><br>
+
+				<h2 class="w3-text-white w3-animate-bottom">Dinner</h2>
+				<label class="w3-text-white w3-animate-bottom" for="dinner_ingredient_list">Ingredient List:</label>
+				<input class="w3-input w3-animate-bottom" type="text" name="dinner_ingredient_list" id="dinner_ingredient_list" required><br>
+				<label class="w3-text-white w3-animate-bottom" for="dinner_time_input">Time (HH:MM):</label>
+				<input class="w3-input w3-animate-bottom" type="text" name="dinner_time_input" id="dinner_time_input" required><br>
+				<button class="w3-animate-bottom" onclick="showSection('date-section', 'create_recipe-section')">Continue</button>
+		</div>
+		<div class="w3-display-middle " id="date-section" style="display: none; text-align: center">
+			<h2 class="w3-text-white w3-animate-top">Date</h2>
+			<label class="w3-text-white w3-animate-top" for="date_input">Date (YYYY-MM-DD):</label><br>
+    <!-- Move the label above the input field -->
+			<input class="w3-text-white w3-animate-top" type="text" name="date_input" id="date_input" required><br>
+			<button class="w3-animate-bottom" onclick="showSection('ending-section', 'date-section')">Generate Recipes</button>
+		</div>
+		</form>
+		<div class="w3-display-middle" id="ending-section" style="display: none; text-align: center;">
+			<div class="w3-container w3-row-padding">
+				{% if breakfast_link %}
+				<div class="w3-third">
+					<h2 class="w3-text-white">Breakfast Recipe Created!</h2>
+					<p class="w3-text-white">Event added to your calendar. <a href="{{ breakfast_link }}">View Event</a></p>
+				</div>
+				{% endif %}
+
+				{% if lunch_link %}
+				<div class="w3-third">
+					<h2 class="w3-text-white">Lunch Recipe Created!</h2>
+					<p class="w3-text-white">Event added to your calendar. <a href="{{ lunch_link }}">View Event</a></p>
+				</div>
+				{% endif %}
+
+				{% if dinner_link %}
+				<div class="w3-third">
+					<h2 class="w3-text-white">Dinner Recipe Created!</h2>
+					<p class="w3-text-white">Event added to your calendar. <a href="{{ dinner_link }}">View Event</a></p>
+				</div>
+				{% endif %}
+				<h2 class="w3-text-white w3-animate-top">Your Recipes are being generated</h2>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
